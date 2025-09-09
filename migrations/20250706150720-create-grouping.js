@@ -27,7 +27,7 @@ module.exports = {
         key: 'id'
       },
       onUpdate: 'CASCADE',
-      onDelete: 'SET NULL'
+      onDelete: 'CASCADE'
     },
     username:{
          type: Sequelize.STRING, 
