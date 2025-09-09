@@ -9,15 +9,20 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-    
-    email: { type: Sequelize.STRING, unique: true },
-    password: {
-      type: Sequelize.STRING,
-    },
-    role: {
-    type: Sequelize.ENUM('user', 'mentor','superadmin','admin'), allowNull: false ,
-    defaultValue: 'user',
-},
+      email: {
+        type: Sequelize.STRING,
+        unique: true,
+        allowNull: false
+      },
+      password: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      role: {
+        type: Sequelize.ENUM('user', 'mentor', 'superadmin', 'admin'),
+        allowNull: false,
+        defaultValue: 'user'
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -28,8 +33,10 @@ module.exports = {
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       },
-      deletedAt: Sequelize.DATE,
-      allowNull: false,
+      deletedAt: {
+        type: Sequelize.DATE,
+        allowNull: true   // ✅ make it nullable since it’s for soft deletes
+      }
     });
   },
 
