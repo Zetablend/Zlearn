@@ -54,7 +54,7 @@ module.exports = {
         defaultValue: 'User',
       },
        status:{
-      type:DataTypes.ENUM('completed','active','discontinue'),
+      type: Sequelize.ENUM('completed','active','discontinue'),
       allowNull: false,
        defaultValue: 'active',
     },
